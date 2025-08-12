@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* ===================== CABEÇALHO E NAVEGAÇÃO ===================== */
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===================== HERO SECTION ===================== */
+
+.hero {
+    background-color: white;
+    padding: 40px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* ===================== DESTAQUES ===================== */
+
+.destaques {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.destaques ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* ===================== RODAPÉ ===================== */
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 8px;
+}
+
+footer .botao-voltar {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+footer .botao-voltar:hover {
+    background-color: #555;
+}
+
+/* ===================== SOBRE ===================== */
+
+.sobre-section {
+    background-color: white;
+    padding: 40px;
+    margin: 30px 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.sobre-section h2 {
+    font-size: 2.5em;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.sobre-description {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.sobre-section ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.sobre-section ul li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.sobre-section ul li i {
+    color: #4CAF50;
+    margin-right: 10px;
+}
+
+.sobre-section .cta-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.sobre-section .cta-button:hover {
+    background-color: #45a049;
+}
+
+/* ===================== FUNCIONALIDADES ===================== */
+
+.funcionalidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* ===================== IMAGENS E ÍCONES ===================== */
+
+.sobre-icons, .funcionalidades-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.sobre-icons i, .funcionalidades-icons i {
+    font-size: 3em;
+    color: #4CAF50;
+}
+
+.sobre-icons .icon-text, .funcionalidades-icons .icon-text {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.sobre-icons .icon-text p, .funcionalidades-icons .icon-text p {
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+
+/* ===================== BOTOES ===================== */
+
+.funcionalidades-button, .sobre-section .cta-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.funcionalidades-button:hover, .sobre-section .cta-button:hover {
+    background-color: #45a049;
+}
+
+/* ===================== FALE CONOSCO ===================== */
+
+.contato {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.contato h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* estilização da mensagem de erro*/
+.is-invalid {
+    border-color: red !important;
+    }
+
+.erro {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+
+/* ===================== CADASTRO ===================== */
+
+.cadastro{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.cadastro img{
+    width: 50px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.cadastro h1{
+    text-align: center;
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+.cadastro h3{
+    text-align: center;
+    color: #4CAF50;
+}
+
+.cadastro hr{
+    border: none;
+    height: 2px;
+    background-color: #7f7e7e;
+    margin: 20px 0px;
+}
+
+/* ===================== USABILIDADE =====================*/
+
+.container p{
+    padding-top: 2em;
+}
+
+.container{
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
