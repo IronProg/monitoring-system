@@ -13,7 +13,7 @@ export default function Layout() {
 
   return (
     <>
-      <header>
+      <header style={{ position: 'relative' }}>
         <nav>
           <ul>
             { NAV_ROUTES.map(route => (
@@ -25,6 +25,21 @@ export default function Layout() {
             )) }
           </ul>
         </nav>
+
+        <NavLink
+          to={'/login'}
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 40,
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column'
+          }}
+        >
+            <i className="fas fa-user" style={{fontSize: 20, color: 'white'}} />
+        </NavLink>
       </header>
 
 

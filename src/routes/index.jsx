@@ -9,6 +9,7 @@ import Funcionalidades from "../pages/Funcionalidades";
 import Sobre from "../pages/Sobre";
 import Usabilidade from "../pages/Usabilidade";
 import Cadastro from "../pages/Cadastro";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "contato", element: <Contato /> },
       { path: "usabilidade", element: <Usabilidade /> },
       { path: "cadastro", element: <Cadastro /> },
+      { path: "login", element: <Login /> },
     ],
   }
 ]);
