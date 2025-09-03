@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 
-function Home() {
+const Home = () => {
   return (
     <>
       <main>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -17,7 +17,7 @@ const FormContato = () => {
     validaFormulario(true);
   }
 
-  const validaFormulario = (submit = false) => {
+  const validaFormulario = useCallback((submit = false) => {
     const tempErroNome = !nome || nome.trim().split(/\s+/).length < 2
       ? 'Digite seu nome completo (nome e sobrenome).'
       : null;
@@ -38,29 +38,27 @@ const FormContato = () => {
       setAlterado(true);
     }
 
-
     setErroNome(tempErroNome);
     setErroEmail(tempErroEmail);
     setErroMensagem(tempErroMensagem);
-  }
+  }, [email, mensagem, nome])
 
   useEffect(() => {
     if (alterado) { validaFormulario(); }
-  }, [nome, email, mensagem])
-
+  }, [nome, email, mensagem, alterado, validaFormulario])
 
   return (
     <form id="formContato" noValidate>
       <label htmlFor="nome">Nome Completo:</label>
       <input className={!erroNome ? '' : 'is-invalid'} type="text" required onChange={(e) => setNome(e.target.value)} value={nome} />
       <small className="erro" id="erroNome">
-        { erroNome }
+        {erroNome}
       </small>
 
       <label htmlFor="email">E-mail:</label>
       <input className={!erroEmail ? '' : 'is-invalid'} type="email" onChange={(e) => setEmail(e.target.value)} value={email} />
       <small className="erro" id="erroEmail">
-        { erroEmail }
+        {erroEmail}
       </small>
 
       <label htmlFor="assunto">Assunto:</label>
@@ -69,7 +67,7 @@ const FormContato = () => {
       <label htmlFor="mensagem">Mensagem:</label>
       <textarea className={!erroMensagem ? '' : 'is-invalid'} id="mensagem" rows="5" onChange={(e) => setMensagem(e.target.value)} value={mensagem} />
       <small className="erro" id="erroMensagem">
-        { erroMensagem }
+        {erroMensagem}
       </small>
 
       <button type="button" onClick={submit}>Enviar</button>

@@ -1,4 +1,4 @@
-function Funcionalidades() {
+const Funcionalidades = () => {
   return (
     <>
       <section className="funcionalidades">
@@ -13,7 +13,7 @@ function Funcionalidades() {
         <div className="card">
           <h3>Análise de Solo e Cultivo</h3>
           <p>Sensores que medem umidade, pH, nutrientes e temperatura do solo. Recomendações de fertilização e
-              irrigação.</p>
+            irrigação.</p>
         </div>
 
         <div className="card">
