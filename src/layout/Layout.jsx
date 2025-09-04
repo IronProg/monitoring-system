@@ -50,13 +50,13 @@ export default function Layout() {
               onClick={logout}
               style={{
                 background: 'none',
-                border: '1px solid white',
                 color: 'white',
-                padding: '5px 10px',
+                padding: '5px',
+                border: 0,
                 cursor: 'pointer',
               }}
             >
-              Sair
+              <i class="fa-solid fa-right-from-bracket" />
             </button>
           </div>
         ) : (
