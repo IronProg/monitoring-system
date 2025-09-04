@@ -1,24 +1,18 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import facebook from '../assets/facebook.png';
 import google from '../assets/google.png';
-import { AuthContext } from '../contexts/AuthContext';
-import { LOGGED_USER_KEY, USERS_KEY } from '../globals';
+import { useAuth } from '../providers/AuthProvider';
 
 const Cadastro = () => {
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext);
+  const { register, users } = useAuth();
 
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
-
-  const loadUsers = () => {
-    const usersJson = localStorage.getItem(USERS_KEY);
-    return usersJson ? JSON.parse(usersJson) : [];
-  };
 
   const cadastro = (e) => {
     e.preventDefault();
@@ -41,16 +35,16 @@ const Cadastro = () => {
       phone,
     };
 
-    const prevUsers = loadUsers();
 
-    const emailExists = prevUsers.some((user) => user.email === newUser.email);
+    const emailExists = users.some((user) => user.email === newUser.email);
+
     if (emailExists) {
       alert('Este e-mail já está cadastrado!');
       return;
     }
 
-    localStorage.setItem(USERS_KEY, JSON.stringify([...prevUsers, newUser]));
-    login(newUser);
+    register(newUser);
+
     reset();
 
     navigate('/');

@@ -1,6 +1,5 @@
-import { useContext } from "react";
 import { NavLink, Outlet } from "react-router";
-import { AuthContext } from "../contexts/AuthContext";
+import { useAuth } from "../providers/AuthProvider";
 
 const NAV_ROUTES = [
   { path: '/', title: 'Home' },
@@ -12,7 +11,7 @@ const NAV_ROUTES = [
 ];
 
 export default function Layout() {
-  const { loggedUser, logout } = useContext(AuthContext);
+  const { loggedUser, logout } = useAuth();
 
   const visibleRoutes = loggedUser
     ? NAV_ROUTES.filter(route => route.path !== '/cadastro')

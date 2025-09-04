@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { LOGGED_USER_KEY, USERS_KEY } from '../globals';
+import { USERS_KEY } from '../globals';
+import { useAuth } from '../providers/AuthProvider';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,26 +10,17 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const loadUsers = () => {
-    const usersJson = localStorage.getItem(USERS_KEY);
-    return JSON.parse(usersJson);
-  };
+  const { login, users } = useAuth();
 
-  const loginUser = (user) => {
-    localStorage.setItem(LOGGED_USER_KEY, user);
-  };
-
-  const login = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
 
-    const registeredUsers = loadUsers();
-
-    const user = registeredUsers.find(
+    const user = users.find(
       (u) => u.email === email && u.password === password
     );
 
     if (user) {
-      loginUser(user);
+      login(user);
       navigate('/');
     } else {
       setError('E-mail ou senha incorretos.');
@@ -45,7 +37,7 @@ const Login = () => {
   return (
     <section className="login">
       <h1>Login</h1>
-      <form onSubmit={login}>
+      <form onSubmit={handleLogin}>
         <input
           type="email"
           placeholder="EMAIL:"
