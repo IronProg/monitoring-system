@@ -1,4 +1,4 @@
-function Usabilidade() {
+const Usabilidade = () => {
   return (
     <>
       <section

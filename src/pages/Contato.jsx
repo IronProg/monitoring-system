@@ -1,6 +1,6 @@
 import FormContato from "../components/FormContato";
 
-function Contato() {
+const Contato = () => {
   return (
     <>
       <h2>Entre em Contato</h2>

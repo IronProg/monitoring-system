@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 
-function Sobre() {
+const Sobre = () => {
   return (
     <>
       <section className="sobre-section">
