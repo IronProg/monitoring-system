@@ -7,6 +7,7 @@ const NAV_ROUTES = [
   { path: '/sobre', title: 'Sobre' },
   { path: '/contato', title: 'Fale Conosco' },
   { path: '/usabilidade', title: 'Usabilidade' },
+  { path: '/orcamento', title: 'Orçamento' },
   { path: '/cadastro', title: 'Cadastre-se' },
 ];
 
