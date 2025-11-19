@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { USERS_KEY } from '../globals';
 import { useAuth } from '../providers/AuthProvider';
 
 const Login = () => {

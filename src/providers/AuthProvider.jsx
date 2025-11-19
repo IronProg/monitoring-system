@@ -24,7 +24,9 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const usersJson = localStorage.getItem(USERS_KEY);
 
-    setUsers(JSON.parse(usersJson));
+    if (usersJson) {
+      setUsers(JSON.parse(usersJson));
+    }
   }, []);
 
   const login = (user) => {
